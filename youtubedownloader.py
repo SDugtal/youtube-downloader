@@ -4,10 +4,10 @@ from tkinter import filedialog
 
 def download_video(url, save_path):
     try:
-        # Define download options for yt-dlp
         ydl_opts = {
-            'format': 'best',  # Download the best available quality
-            'outtmpl': f'{save_path}/%(title)s.%(ext)s'  # Save to the selected folder with video title
+            'format': 'bestvideo+bestaudio/best',  
+            'merge_output_format': 'mp4',          
+            'outtmpl': f'{save_path}/%(title)s.%(ext)s'  
         }
 
         # Download the video using yt-dlp
